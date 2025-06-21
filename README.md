@@ -89,7 +89,7 @@ riffraff/
 ## 💬 Support
 
 Built with ❤️ by Ryan (a.k.a. Lord Ryn) for the Misfit Marauders Discord.  
-Site: [https://wcservices.co](https://wcservices.co)
+Site: [https://wcs.business](https://wcs.business)
 
 ---
 
