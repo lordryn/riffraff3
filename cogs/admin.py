@@ -107,5 +107,34 @@ class Admin(commands.Cog):
 !commremove hello Alice
 ```""")
 
+
+    @commands.command(name="refresh")
+    @commands.is_owner()
+    async def refresh_cogs(self, ctx):
+        """Reloads all loaded cogs."""
+        reloaded = []
+        failed = []
+
+        for cog in list(self.bot.extensions):
+            try:
+                await self.bot.reload_extension(cog)
+                reloaded.append(cog)
+            except Exception as e:
+                failed.append((cog, str(e)))
+
+        msg = ""
+        if reloaded:
+            msg += f"✅ Reloaded:\n" + "\n".join(reloaded) + "\n"
+        if failed:
+            msg += f"\n❌ Failed:\n" + "\n".join(f"{c}: {e}" for c, e in failed)
+
+        await ctx.send(f"```{msg}```")
+
+
+    @commands.command(name="whoami")
+    async def whoami(self, ctx):
+        is_owner = await self.bot.is_owner(ctx.author)
+        await ctx.send(f"You're {ctx.author} (ID: {ctx.author.id}) — Bot owner: {is_owner}")
+
 async def setup(bot):
     await bot.add_cog(Admin(bot))

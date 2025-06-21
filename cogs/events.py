@@ -27,11 +27,11 @@ class Events(commands.Cog):
             name="Misfit Marauders"
         ))
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if message.author == self.bot.user:
-            return
-        await self.bot.process_commands(message)
+    # @commands.Cog.listener()
+    # async def on_message(self, message):
+    #     if message.author == self.bot.user:
+    #         return
+    #     await self.bot.process_commands(message)
 
     @commands.Cog.listener()
     async def on_command(self, ctx):

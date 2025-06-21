@@ -32,7 +32,7 @@ class Leaderboard(commands.Cog):
             for chunk in [top_md[i:i + 1750] for i in range(0, len(top_md), 1750)]:
                 await ctx.send(f"```Gains leaderboard:``````{chunk}```")
 
-            await ctx.send("```brought to you by Ryan at https://wcservices.co \nrefreshes every saturday```")
+            await ctx.send("brought to you by Ryan at https://wcs.buisiness/portfolio \nrefreshes every saturday")
         except Exception as e:
             Logger.log(f"Leaderboard fetch failed: {e}")
             await ctx.send("Error loading leaderboard")
