@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-
+# no secrets here
 
 class Config:
     load_dotenv()
