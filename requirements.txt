@@ -1,0 +1,14 @@
+aiohttp
+asyncio
+beautifulsoup4
+discord.py
+python-dotenv
+gTTS
+lxml
+pandas
+pyttsx3
+python-dateutil
+pytz
+requests
+requests-html
+tabulate
