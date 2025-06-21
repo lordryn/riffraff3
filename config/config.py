@@ -1,12 +1,15 @@
 import os
+from dotenv import load_dotenv
+
 
 class Config:
-    my_secret = 'OTY2MTE3MjQ3MzU1NjA1MDEy.GDAaVP.s5ERhCe7dUG3IhzAVTRGnvTpS94KMwyrb2L54w'
+    load_dotenv()
+    TOKEN = os.getenv("DISCORD_TOKEN")
+    PREFIX = os.getenv("COMMAND_PREFIX")
 
-    TOKEN = os.getenv("DISCORD_BOT_TOKEN", my_secret)
     DEV_IDS = [275139099415937024]  # Replace with actual developer Discord user IDs
     RAFFLE_DB_FILE = "raffle.sqlite"
-    BOT_PREFIX = "!"
+    BOT_PREFIX = PREFIX
     TIMEZONE = "America/Chicago"  # or your preferred TZ
 
     SERVER_ID = 947325362226925598
